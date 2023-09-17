@@ -1,0 +1,10 @@
+name: eloy_dev
+
+repository: https://github.com/andrespd99/eloy_dev
+
+sdkPath: .fvm/flutter_sdk
+
+packages:
+  - api
+  - client
+  - packages/*

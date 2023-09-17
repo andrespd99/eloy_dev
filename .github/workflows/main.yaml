@@ -1,29 +1,31 @@
-name: eloy_dev
+# NOTE: For now, I don't need running jobs on push or pull request.
 
-concurrency:
-  group: $-$
-  cancel-in-progress: true
+# name: eloy_dev
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+# concurrency:
+#   group: $-$
+#   cancel-in-progress: true
 
-jobs:
-  semantic-pull-request:
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/semantic_pull_request.yml@v1
+# on:
+#   push:
+#     branches:
+#       - main
+#   pull_request:
+#     branches:
+#       - main
 
-  build:
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
-    with:
-      flutter_channel: stable
+# jobs:
+#   semantic-pull-request:
+#     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/semantic_pull_request.yml@v1
 
-  spell-check:
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/spell_check.yml@v1
-    with:
-      includes: |
-        **/*.md
-      modified_files_only: false
+#   build:
+#     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
+#     with:
+#       flutter_channel: stable
+
+#   spell-check:
+#     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/spell_check.yml@v1
+#     with:
+#       includes: |
+#         **/*.md
+#       modified_files_only: false
